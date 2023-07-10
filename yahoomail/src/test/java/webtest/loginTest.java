@@ -16,7 +16,6 @@ import webtest.pageObjects.newUserRegisterationPage;
 public class loginTest extends baseClass {
 
 	
-     // Add more desired capabilities as needed
 		@Test(priority=1)
 		public void loginToYahoo() throws IOException, InterruptedException {
 			
@@ -55,19 +54,19 @@ public class loginTest extends baseClass {
 			closeBrowser();	
 		}
 		
-//		@Test(priority=3)
-//		public void createNewUser() throws IOException, InterruptedException {
-//			initializeBrowser();
-//			getURL();
-//			newUserRegisterationPage ur =new newUserRegisterationPage();
-//			String emailId=GenericUtils.generateRandomUsername();
-//			ur.createAccount(emailId);
-//			String actualLandingPageTitle =driver.getTitle();
-//			String expectedLandingPageTitle ="Yahoo | Mail, Weather, Search, Politics, News, Finance, Sports & Videos";
-//			System.out.println(actualLandingPageTitle);
-//			Assert.assertEquals(actualLandingPageTitle, expectedLandingPageTitle, "Unsuccessful Account Creation");	
-//			closeBrowser();
-//		}
+		@Test(priority=3)
+		public void createNewUser() throws IOException, InterruptedException {
+			initializeBrowser();
+			getURL();
+			newUserRegisterationPage ur =new newUserRegisterationPage();
+			String emailId=GenericUtils.generateRandomUsername();
+			ur.createAccount(emailId);
+			String actualLandingPageTitle =driver.getTitle();
+			String expectedLandingPageTitle ="Yahoo | Mail, Weather, Search, Politics, News, Finance, Sports & Videos";
+			System.out.println(actualLandingPageTitle);
+			Assert.assertEquals(actualLandingPageTitle, expectedLandingPageTitle, "Unsuccessful Account Creation");	
+			closeBrowser();
+		}
 
 
 }
