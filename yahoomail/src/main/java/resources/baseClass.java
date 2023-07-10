@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.BeforeClass;
 
 public class baseClass {
@@ -45,6 +46,7 @@ public class baseClass {
 
 	return driver;
 	}
+
  
 	public String getURL() throws IOException {
 		Properties prop= new Properties();
@@ -99,6 +101,18 @@ public class baseClass {
 	public  void closeBrowser()
 	{
 	driver.close();
+	}
+	private void closeBrowser1() {
+	    if (driver != null) {
+	        try {
+	            String sessionId = ((RemoteWebDriver) driver).getSessionId().toString();
+	           
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        } finally {
+	            driver.quit();
+	        }
+	    }
 	}
 
 }

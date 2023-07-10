@@ -65,7 +65,7 @@ public class newUserRegisterationPage extends baseClass {
 		dayField.sendKeys("1");
 		yearField.sendKeys("1990");
 		continueBtn.click();
-		phoneField.sendKeys("1234567890");
+		phoneField.sendKeys("9418453047");
 		continueBtn.click();
 		Thread.sleep(30000);
 		doneButton.click();
